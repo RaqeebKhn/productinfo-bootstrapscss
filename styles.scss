@@ -1,0 +1,220 @@
+$primary-color: #007bff;
+$primary-dark: #0056b3;
+$secondary-color: #6c757d;
+$background-dark: #212529;
+$background-light: #343a40;
+$card-bg: #343a40;
+$card-shadow: rgba(0, 0, 0, 0.2);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $background-dark;
+  color: #f8f9fa;
+}
+
+.navbar {
+  background-color: $background-light;
+
+  .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: $primary-color;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+  }
+}
+
+.hero {
+  background: linear-gradient(135deg, $primary-dark, $primary-color);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  
+  .display-4 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s;
+  }
+
+  .btn-light {
+    background-color: white;
+    color: $primary-color;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.125rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: $background-light;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.product-page {
+  margin-top: 60px;
+
+  .product-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+  }
+
+  .product-price {
+    font-size: 1.75rem;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  .product-description {
+    font-size: 1.2rem;
+    color: #e9ecef;
+    line-height: 1.6;
+  }
+
+  .product-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+      font-size: 1.125rem;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 25px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+
+      &:before {
+        content: "•";
+        color: $primary-color;
+        position: absolute;
+        left: 0;
+        font-size: 1.5rem;
+        top: 0;
+      }
+    }
+  }
+
+  .carousel-item img {
+    border-radius: 15px;
+    box-shadow: 0 6px 12px $card-shadow;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    padding: 12px 30px;
+    font-size: 1.125rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: $primary-dark;
+      border-color: $primary-dark;
+      transform: scale(1.05);
+    }
+  }
+}
+
+#reviews {
+  margin-top: 60px;
+
+  .card {
+    background-color: $card-bg;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px $card-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px $card-shadow;
+    }
+
+    .card-body {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      color: white;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: $secondary-color;
+      margin-bottom: 10px;
+    }
+
+    .text-muted {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+footer {
+  background-color: $background-light;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $background-dark;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: lighten($background-dark, 20%);
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
